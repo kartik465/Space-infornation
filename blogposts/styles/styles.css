@@ -1,0 +1,382 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.card {
+    margin-bottom: 20px;
+    background-color: #1f1f1f;
+    color: #ffffff;
+    transition: transform 0.6s, box-shadow 0.6s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.6s;
+}
+
+.card:hover .card-img-top {
+    transform: scale(1.1);
+}
+
+.card-title {
+    font-size: 1.7rem;
+    transition: transform 0.6s;
+}
+
+.card:hover .card-title {
+    transform: translateY(-10px);
+}
+
+.card-text {
+    font-size: 1.3rem;
+}
+
+.btn {
+    font-size: 1.3rem;
+    background-color: #007bff;
+    color: #ffffff;
+    transition: background-color 0.6s, transform 0.6s;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+}
+
+.hero {
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+}
+
+.hero img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    transform: scale(1.1);
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 2;
+}
+
+.hero .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+.hero .overlay h1 {
+    color: white;
+    font-size: 3em;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+.container.featured {
+    background-color: #1f1f1f;
+    color: #ffffff;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.container.featured h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.container.featured p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #cccccc;
+}
+
+.container.featured img {
+    max-width: 100%;
+    margin-bottom: 30px;
+}
+
+footer {
+    background-color: #1f1f1f;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+}
+
+.footer-heading {
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.footer-link {
+    color: #cccccc;
+}
+
+.footer-link:hover {
+    color: #007bff;
+}
+
+.nav-link {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0 10px;
+    display: inline-block;
+    position: relative;
+    transition: color 0.3s;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background-color: #fb00ff;
+    transform-origin: left;
+    transition: transform 0.3s;
+    opacity: 0;
+}
+
+.nav-link:hover {
+    color: #ffffff;
+}
+
+.nav-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+    opacity: 1;
+}
+
+.modal-content {
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    box-shadow: rgba(255, 255, 255, 0.25) 0 50px 100px -20px;
+}
+
+.modal-header {
+    border-bottom: none;
+}
+
+.modal-title {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: white;
+}
+
+.modal-footer {
+    border-top: none;
+}
+
+.btn-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 2em;
+    color: white;
+    background-color: transparent;
+    border: none;
+    transition: transform 0.3s;
+}
+
+.btn-close:hover {
+    transform: scale(1.1);
+}
+
+.modal-open {
+    overflow: hidden;
+}
+
+.modal-open .modal {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.modal-dialog {
+    max-width: 800px;
+    margin: 2rem auto;
+}
+
+@media (min-width: 576px) {
+    .modal-dialog {
+        max-width: 500px;
+    }
+}
+
+@media (min-width: 768px) {
+    .modal-dialog {
+        max-width: 700px;
+    }
+}
+
+@media (min-width: 992px) {
+    .modal-dialog {
+        max-width: 900px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .modal-dialog {
+        max-width: 1140px;
+    }
+}
+
+.social-icons a {
+    transition: transform 0.3s, color 0.3s;
+}
+
+.social-icons a:hover {
+    transform: scale(1.1);
+}
+
+#goToTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#goToTopBtn:hover {
+    background-color: #0056b3;
+}
+
+.pagination-dark {
+    background-color: #333;
+    /* Dark background color */
+    color: #fff;
+    /* White text color */
+    border-radius: 5px;
+    /* Rounded corners */
+    padding: 10px;
+}
+
+.pagination-dark .page-link {
+    color: #fff;
+    /* White text color for links */
+    background-color: #555;
+    /* Darker background color for links */
+    border-color: #555;
+    /* Border color for links */
+}
+
+.pagination-dark .page-link:hover {
+    background-color: #777;
+    /* Darker background color on hover */
+}
+
+.pagination-dark .page-item.active .page-link {
+    background-color: #007bff;
+    /* Active page link background color */
+    border-color: #007bff;
+    /* Active page link border color */
+}
+
+.pagination-dark .page-item.disabled .page-link {
+    color: #ccc;
+    /* Disabled page link text color */
+    pointer-events: none;
+    /* Disable pointer events for disabled links */
+}
+
+/* CSS for the fade-in animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Apply the animation to the message */
+#no-results-message {
+    /* Existing styles */
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* CSS for the fade-in animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Apply the animation to cards */
+.card {
+    animation: fadeIn 0.3s ease-in-out;
+    /* Adjust duration and easing as needed */
+}
+.table th,
+.table td {
+    vertical-align: middle;
+}
+
+.table thead th {
+    background-color: #343a40;
+    color: #fff;
+    border-color: #454d55;
+}
+
+.table tbody th,
+.table tbody td {
+    background-color: #343a40;
+    color: #fff;
+    border-color: #454d55;
+}
+
+.container .col-lg-8 ul li:first-letter {
+    font-size: 50px;
+}
